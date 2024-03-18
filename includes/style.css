@@ -1,0 +1,284 @@
+
+
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+/* general */
+#navigation {
+	background:#4e4e4e;
+	border:1px solid #000000;
+	margin:0 auto;
+	width:1855px;
+	height:40px;
+	list-style:none;
+}
+
+a {
+	color:#777;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#e73434;
+	text-decoration:none;
+}
+
+/* body */
+body {
+	background:#ffffffe5;
+	color:#000000;
+	font:0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
+}
+
+/* header */
+#header {
+	height:0px;
+	margin:0 auto;
+	width: 1080px;
+}
+
+#header h1 {
+	color:#000000;
+	font-size:300%;
+	letter-spacing:-3px;
+	text-align:right;
+	padding:10px;
+	margin-bottom:-10px;
+}
+
+#header h2 {
+	color:#CCC;
+	font-size:200%;
+	letter-spacing:-2px;
+	text-align:right;
+}
+
+
+
+#navigation li {
+	border-right: 1px solid #1713f500;
+	float:left;
+	width:149px;
+	list-style:none;
+}
+
+#navigation a {
+	color:#ffffff;
+	display:block;
+	line-height:40px;
+	text-align:center;
+}
+
+#navigation a:hover {
+    background: #ff000059;
+	color:#ffffff;
+}
+
+#navigation .active {
+	background:#1519fc67;
+	color:#ffffff;
+}
+
+#menu {
+	float: left;
+	margin-top: -50px;
+	padding: 5px;
+}
+
+#menu a {
+	color: #ffffff;
+	text-decoration:underline
+}
+
+
+/* content */
+#content {
+	margin: 0 auto;
+	padding: 0 0 20px;
+	width: 751px;
+	overflow: auto
+}
+
+#content h1 {
+	border-bottom:1px dashed #ffffff;
+	font-size:1.8em;
+	padding:20px 0 0;
+}
+
+#content p {
+	padding:20px 20px 0;
+}
+
+/* ---------------------- producten ----------------------------- */
+
+#product {
+	padding: 5px;
+	margin: 15px;
+	width: 200px;
+	border: 1px solid #ddd;
+	float: left;
+}
+
+#prodnummer, #prodnaam, #beschrijving, #prijs {
+	padding: 5px;
+	margin: 2px 0;
+}
+
+#prodnummer {
+	height: 20px;
+	width: 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#prodnaam {
+	font-size: 1.3em;
+	width: 150px;
+}
+
+#prijs {
+	float: right;
+	font-size: 1.4em;
+	padding: 2px;
+}
+
+#voorraad, #leverbaar {
+	float: left;
+	width: 100px;
+	margin: 1px 0;
+}
+
+#beschrijving {
+	padding: 5px;
+}
+
+#selecteer {
+	padding: 5px;
+	margin-top: 34px;
+	background-color: #000000;
+	overflow: auto;
+}
+
+/* ---------------------- footer ----------------------------- */
+#footer {
+	border-top:1px solid #ffffff; 
+	height:50px;
+	margin:0 auto;
+	padding:10px;
+	text-align:center;
+	width:751px;
+}
+
+#links, #rechts {
+	padding: 3px;
+}
+
+#links {
+	width: 150px;
+}
+	
+#rechts {
+	width: 250px;
+}
+
+.error, .ad {
+	font-weight: bold;
+	color: #C00;
+}
+
+input, select, .input {
+	padding: 4px;
+	margin: 0 5px;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #444;
+	border:1px dotted #004080;
+    background: #ffc;
+}
+
+.button {
+    border: 1px solid #006;
+    background: #AFE7E8;
+	float: right;
+}
+
+table, td, th {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	font-size: 1.0em;
+}
+
+table 
+{
+	width: 80%;
+	margin: 20px;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+th {
+	background-color: #eee;
+	color:	black;
+	height: 20px;
+	padding: 5px;
+}
+
+td {
+	height: 25px;
+	vertical-align: bottom;
+	padding: 5px;
+}
+
+ul
+{
+	list-style-type: none;
+}
+
+/* -------------------------------- */
+
+.errorlist, .error input{
+	border: 1px solid red;
+	background: #fdd;
+}
+.errorlist {
+	width: 70%;
+	margin: 10px;
+	padding: 4px;
+}
+
+form.formulier fieldset {
+	margin: 20px;
+	border: 1px solid #aaa;
+	width: 400px;
+}
+form.formulier legend {
+	padding: 0 2px;
+	font-weight: bold;
+}
+form.formulier label {
+	display: inline-block;
+	line-height: 1.8;
+	vertical-align: top;
+}
+form.formulier fieldset ol {
+	margin: 0;
+	padding: 0;
+}
+form.formulier fieldset li {
+	list-style: none;
+	padding: 5px;
+	margin: 0;
+}
+form.formulier em {
+	font-weight: bold;
+	font-style: normal;
+	color: #f00;
+}
+form.formulier label {
+	width: 120px; /* Width of labels */
+	margin-left: 20px;
+}
+

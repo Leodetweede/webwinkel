@@ -8,7 +8,6 @@ error_reporting(E_ERROR | E_PARSE);
 
 // Zet de titel en laad de HTML header uit het externe bestand.
 $page_title = 'Welkom in de WebWinkel';
-$active = 4;	// Zorgt ervoor dat header.html weet dat dit het actieve menu-item is.
 include ('includes/header.html');
 ?>
 <h1>Beheer</h1>

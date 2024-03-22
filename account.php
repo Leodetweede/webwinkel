@@ -1,48 +1,55 @@
 ﻿<?php
 //index.php
-//startscherm van de webwinkel
+//start screen of the web store
 
-$page_title = 'Welkom in de WebWinkel';
+$page_title = 'Welcome to the WebStore';
+$active = 4;	// Zorgt ervoor dat header.html weet dat dit het actieve menu-item is.
 include ('includes/header.html');
 
-// mysqli_connect.php bevat de inloggegevens voor de database.
-// Per server is er een apart inlogbestand - localhost vs. remote server
+
 include ('includes/mysqli_connect_'.$_SERVER['SERVER_NAME'].'.php');
 
-// Page header:
-echo '<h1>Uw gegevens</h1>';
+echo '<h1>Jouw account</h1>';
 
-//
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-// check connection
+
 if (mysqli_connect_errno()) {
-	printf("<p><b>Fout: verbinding met de database mislukt.</b><br/>\n%s</p>\n", mysqli_connect_error());
-	include ('includes/footer.html');
-	exit();
+    displayDatabaseConnectionError();
 }
 
 if (empty($_SESSION['klantnr'])) {
-	echo "<li>U bent niet ingelogd | <a href=\"login.php\">login</a></li>\n";
+    echo "<li>U bent niet ingelogd | <a href=\"login.php\">login</a></li>\n";
 } else {
-	$klantnr = $_SESSION['klantnr'];
-
-	$sql = "SELECT `naam`, `adres`, `postcode`, `plaats`, `emailadres` FROM `klant` WHERE `klantnr`='".$klantnr."'";
-	// Voer de query uit en sla het resultaat op 
-
-	$result = mysqli_query($conn, $sql) or die (mysqli_error($conn)."<br>Error in file ".__FILE__." on line ".__LINE__);
-	$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-	
-	echo "<table>\n";
-	echo "<tr><td id='links'>Naam</td> <td id='rechts'>".$row["naam"]."</td></tr>\n";
-	echo "<tr><td id='links'>Adres</td><td id='rechts'>".$row["adres"]."</td></tr>\n";
-	echo "<tr><td id='links'>Postcode</td><td id='rechts'>".$row["postcode"]."</td></tr>\n";
-	echo "<tr><td id='links'>Plaats</td><td id='rechts'>".$row["plaats"]."</td></tr>\n";
-	echo "<tr><td id='links'>Email</td><td id='rechts'>".$row["emailadres"]."</td></tr>\n";
-	echo "<tr><td id='links'>Klantnr</td><td id='rechts'>".$klantnr."</td></tr>\n";
-	echo "</table>\n";
-
+    displayCustomerDetails($conn);
 }
-// Sluit de connection
+
 mysqli_close($conn);
 include ('includes/footer.html');
+
+function displayDatabaseConnectionError() {
+    printf("<p><b>Error: Failed to connect to the database.</b><br/>\n%s</p>\n", mysqli_connect_error());
+    include ('includes/footer.html');
+    exit();
+}
+
+function displayCustomerDetails($conn) {
+    $klantnr = $_SESSION['klantnr'];
+
+    $sql = "SELECT `naam`, `adres`, `postcode`, `plaats`, `emailadres` FROM `klant` WHERE `klantnr`='".$klantnr."'";
+    $result = mysqli_query($conn, $sql) or die (mysqli_error($conn)."<br>Error in file ".__FILE__." on line ".__LINE__);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    echo "<table>\n";
+    displayRow('Name', $row["naam"]);
+    displayRow('Address', $row["adres"]);
+    displayRow('Postal Code', $row["postcode"]);
+    displayRow('City', $row["plaats"]);
+    displayRow('Email', $row["emailadres"]);
+    displayRow('Customer Number', $klantnr);
+    echo "</table>\n";
+}
+
+function displayRow($label, $value) {
+    echo "<tr><td id='links'>$label</td><td id='rechts'>$value</td></tr>\n";
+}
 ?>

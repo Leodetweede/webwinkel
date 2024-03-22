@@ -2,102 +2,85 @@
 //index.php
 //startscherm van de webwinkel
 
-// Zet het niveau van foutmeldingen zo dat warnings niet getoond worden.
+// Zet het niveau van foutmeldingen zo dat alleen ernstige fouten worden getoond.
 error_reporting(E_ERROR | E_PARSE);
 
 $page_title = 'Welkom in de WebWinkel';
 include ('includes/header.html');
 
-// mysqli_connect.php bevat de inloggegevens voor de database.
-// Per server is er een apart inlogbestand - localhost vs. remote server
+// Inclusief het bestand met de databaseverbinding voor de specifieke server.
 include ('includes/mysqli_connect_'.$_SERVER['SERVER_NAME'].'.php');
 
-// Page header:
+// Toon de titel van de pagina.
 echo '<h1>Login</h1>';
 
-//Variabelen
-$email = $_POST['email'];
-$password = $_POST['password'];
+// Als het formulier is ingediend, verwerk het.
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    verwerkLoginFormulier();
+}
 
-// Toon eventuele foutmeldingen.
-if ( $_SERVER['REQUEST_METHOD'] == 'POST') // && isset($_POST['email']) && isset($_POST['password']))
-{
-	// We gaan de errors in een array bijhouden
-	// We kunnen dan alle foutmeldingen in één keer afdrukken.
-	$aErrors = array();
+// Toon het inlogformulier.
+toonLoginFormulier();
 
-	//  Kijk of een email adres is ingevoerd
-	if ( empty($_POST['email'])) {
-		$aErrors['email'] = 'Geen geldig email adres.';
-		$aErrors['password'] = 'Ongeldig wachtwoord ingevoerd';
-	}
+// Inclusief de footer van de pagina.
+include ('includes/footer.html');
 
-	// Wanneer er geen foutieve invoer is gaan we naar de database.
-	if ( count($aErrors) == 0 ) 
-	{
-		// Gebruiker uit database lezen.
-		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
- 
-		// check connection
-		if (mysqli_connect_errno()) {
-			printf("<p><b>Fout: verbinding met de database mislukt.</b><br/>\n%s</p>\n", 
-					mysqli_connect_error());
-			include ('includes/footer.html');
-			exit();
-		}
+// Functie om het ingediende inlogformulier te verwerken.
+function verwerkLoginFormulier() {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-		$sql = "SELECT `klantnr`, `naam` FROM `klant` WHERE `emailadres`='".$_POST['email']."';";
+    // Maak verbinding met de database.
+    $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-		$stmt = $conn->prepare("SELECT klantnr, naam FROM klant WHERE emailadres=? AND password=?");
-		$stmt->bind_param("ss", $email, $password);
-
-		$stmt->execute();
-
-		$result = $stmt->get_result();
-
-		// Controleer of er een overeenkomst is gevonden
-if ($result->num_rows > 0) {
-    // Gebruiker gevonden
-    while($row = $result->fetch_assoc()) {
-        $_SESSION['klantnr'] = $row["klantnr"];
-			$_SESSION['klantnaam'] = $row["naam"];
-			mysqli_close($conn);
-
-			header('Location: index.php');
-			exit();
+    // Controleer of de verbinding is gelukt.
+    if (mysqli_connect_errno()) {
+        toonDatabaseVerbindingsFout();
     }
-} else {
-    // Gebruiker niet gevonden
-    echo "Geen gebruiker gevonden met dat e-mailadres en wachtwoord.";
-}
-	}
-}
-?>
-	<p>Voer hier uw emailadres in. Nieuwe klant? <a href="registreer.php">Registreer hier</a>.</p>
 
-    <form action="login.php" method="post" class="formulier">
-      <?php
-      if ( isset($aErrors) and count($aErrors) > 0 ) {
-			print '<ul class="errorlist">';
-			foreach ( $aErrors as $error ) {
-				print '<li>' . $error . '</li>';
-			}
-			print '</ul>';
-      }
-      ?>
-      <fieldset>
-        <legend>Login</legend>
-        <ol>
-          <li>
-            <label for="email">E-mail</label>
-            <input id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" />
-			<label for="email">Wachtwoord</label>
-			<input id="password" name= "password" value="<?php echo isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '' ?>" />
-          </li>
-        </ol>
-        <input type="submit" value="Login" class="button"/>
-      </fieldset>
-    </form>
-<?php	
-	include ('includes/footer.html');
+    // Zoek de gebruiker in de database op basis van het ingevoerde e-mailadres en wachtwoord.
+    $sql = "SELECT `klantnr`, `naam` FROM `klant` WHERE `emailadres`='$email' AND `password`='$password'";
+    $result = mysqli_query($conn, $sql);
+
+    // Als er een overeenkomst is gevonden, sla de gebruikersgegevens op in de sessie en stuur door naar de startpagina.
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['klantnr'] = $row["klantnr"];
+        $_SESSION['klantnaam'] = $row["naam"];
+        mysqli_close($conn);
+
+        header('Location: index.php');
+        exit();
+    } else {
+        // Als er geen overeenkomst is gevonden, toon een foutmelding.
+        echo "Geen gebruiker gevonden met dat e-mailadres en wachtwoord.";
+    }
+}
+
+// Functie om een foutmelding weer te geven als de databaseverbinding mislukt.
+function toonDatabaseVerbindingsFout() {
+    printf("<p><b>Fout: Verbinding met de database is mislukt.</b><br/>\n%s</p>\n", mysqli_connect_error());
+    include ('includes/footer.html');
+    exit();
+}
+
+// Functie om het inlogformulier weer te geven.
+function toonLoginFormulier() {
+    echo '<p>Voer hier uw e-mailadres in. Nieuwe klant? <a href="registreer.php">Registreer hier</a>.</p>';
+
+    echo '<form action="login.php" method="post" class="formulier">';
+    echo '<fieldset>';
+    echo '<legend>Login</legend>';
+    echo '<ol>';
+    echo '<li>';
+    echo '<label for="email">E-mail</label>';
+    echo '<input id="email" name="email" value="' . (isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '') . '" />';
+    echo '<label for="password">Wachtwoord</label>';
+    echo '<input id="password" name="password" value="' . (isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '') . '" />';
+    echo '</li>';
+    echo '</ol>';
+    echo '<input type="submit" value="Login" class="button"/>';
+    echo '</fieldset>';
+    echo '</form>';
+}
 ?>

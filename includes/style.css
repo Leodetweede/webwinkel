@@ -169,7 +169,7 @@ body {
 	margin:0 auto;
 	padding:10px;
 	text-align:center;
-	width:751px;
+	width:1080px;
 }
 
 #links, #rechts {
@@ -186,7 +186,7 @@ body {
 
 .error, .ad {
 	font-weight: bold;
-	color: #C00;
+	color: rgb(255, 255, 255);
 }
 
 input, select, .input {

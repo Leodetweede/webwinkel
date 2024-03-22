@@ -1,43 +1,47 @@
-﻿<?php session_start(); ?>
-<html>
+﻿<?php 
+session_start(); 
+$page_title = 'GBS Solutions'; // Definieer de paginatitel
+$active = isset($active) ? $active : 1; // Definieer $active als het niet is ingesteld
+
+?>
+<!DOCTYPE html>
+<html lang="nl">
 <head>
-<title><?php echo $page_title; ?></title>	
-<link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />
-<meta charset="UTF-8">
-<script type="text/javascript">
-<!--
-function logOut() {
-	var answer = confirm ('Weet je zeker dat je wilt uitloggen?')
-	if (answer)
-		window.location="logout.php";
-}
-//-->
-</script>
+    <meta charset="UTF-8">
+    <title><?php echo $page_title; ?></title>
+    <link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />
+    <script type="text/javascript">
+        function logOut() {
+            var answer = confirm('Weet je zeker dat je wilt uitloggen?');
+            if (answer) {
+                window.location = "logout.php";
+            }
+        }
+    </script>
 </head>
 <body>
-<div id="header">
-<h1>GBS Solutions</h1>
-<h2>Voor een fijne werkomgeving!</h2>
+    <div id="header">
+        <h1>GBS Solutions</h1>
+        <h2>Voor een fijne werkomgeving!</h2>
 
-<?php
-	// Toon de inhoud van je winkelwagen en de naam van de gebruiker linksboven in header.
-	
-	if (empty($_SESSION['klantnr'])) {
-		echo "<li>U bent niet ingelogd | <a href=\"login.php\">login</a></li>\n";
-	} else {
-		echo "<li>Welkom <a href=\"account.php\">".$_SESSION['klantnaam']."</a> | <a href=\"javascript:logOut()\">logout</a></li>\n";
-	}
-	echo("</ul>");
-	if (!isset($active)) $active = 0;
-?>
-</div><div id="navigation">
-<ul>
-<li<?php if ($active =="1") {?> class="active"<?php } ?>><a href="index.php">Homepage</a></li>
-<li<?php if ($active =="2") {?> class="active"<?php } ?>><a href="Electrostatische luchtfilter.php">Electrostatische luchtfilters</a></li>
-<li<?php if ($active =="3") {?> class="active"<?php } ?>><a href="HEPA luchtfilters.php">HEPA luchtfilters</a></li>
-<li<?php if ($active =="4") {?> class="active"<?php } ?>><a href="account.php">Mijn account</a></li>
-<li<?php if ($active =="5") {?> class="active"<?php } ?>><a href="cart.php">Winkelwagen</a></li>
-</ul>
-</div>
-<div id="content">
-<!-- Start of the page-specific content. -->
+        <?php
+        // Toon de inhoud van je winkelwagen en de naam van de gebruiker linksboven in header.
+
+        if (empty($_SESSION['klantnr'])) {
+            echo "<p>U bent niet ingelogd | <a href=\"login.php\">Login</a></p>\n";
+        } else {
+            echo "<p>Welkom <a href=\"account.php\">" . $_SESSION['klantnaam'] . "</a> | <a href=\"javascript:logOut()\">Logout</a></p>\n";
+        }
+        ?>
+    </div>
+    <div id="navigation">
+        <ul>
+            <li<?php if ($active == 1) { ?> class="active"<?php } ?>><a href="index.php">Homepage</a></li>
+            <li<?php if ($active == 2) { ?> class="active"<?php } ?>><a href="Electrostatische luchtfilter.php">Elektrostatische luchtfilters</a></li>
+            <li<?php if ($active == 3) { ?> class="active"<?php } ?>><a href="HEPA luchtfilters.php">HEPA luchtfilters</a></li>
+            <li<?php if ($active == 4) { ?> class="active"<?php } ?>><a href="account.php">Mijn account</a></li>
+            <li<?php if ($active == 5) { ?> class="active"<?php } ?>><a href="cart.php">Winkelwagen</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <!-- Start of the page-specific content. -->

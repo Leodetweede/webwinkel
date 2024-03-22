@@ -8,12 +8,12 @@
 error_reporting(E_ERROR | E_PARSE);
 
 // Zet de titel en laad de HTML header uit het externe bestand.
-$page_title = 'AirPure Mini';
-$active = 3;	// Zorgt ervoor dat header.html weet dat dit het actieve menu-item is.
+$page_title = 'Electrostatische luchtfilter';
+$active = 2;	// Zorgt ervoor dat header.html weet dat dit het actieve menu-item is.
 include ('includes/header.html');
 
-echo "<h1>AirPure Mini</h1>";
-echo "<p>Webpagina voor product AirPure Mini</p>";
+echo "<h1>Electrostatische luchtfilter</h1>";
+echo "<p>Webpagina voor de Electrostatische luchtfilter</p>";
 
 include ('includes/footer.html');
 ?>

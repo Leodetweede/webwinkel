@@ -15,6 +15,10 @@ include ('includes/mysqli_connect_'.$_SERVER['SERVER_NAME'].'.php');
 // Page header:
 echo '<h1>Login</h1>';
 
+//Variabelen
+$email = $_POST['email'];
+$password = $_POST['password'];
+
 // Toon eventuele foutmeldingen.
 if ( $_SERVER['REQUEST_METHOD'] == 'POST') // && isset($_POST['email']) && isset($_POST['password']))
 {
@@ -43,26 +47,29 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') // && isset($_POST['email']) && isset
 		}
 
 		$sql = "SELECT `klantnr`, `naam` FROM `klant` WHERE `emailadres`='".$_POST['email']."';";
-		// Voer de query uit 
-		$result = mysqli_query($conn, $sql) or die (mysqli_error($conn)."<br>in file ".__FILE__." on line ".__LINE__);
-		
-		if(mysqli_num_rows($result) == 0) {
-			$aErrors['email'] = 'Het emailadres is niet gevonden.';
-			unset($_POST['email']);
-		} else {
-			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-			// Bij een ingelogde gebruiker bewaren we de naam en het klantnr in de sessie.
-			// Hiermee kunnen we de klantnaam op het scherm tonen, en de winkelwagen aan 
-			// het juiste klantnr koppelen, zodat de bestelling later afgerond kan worden.
-			$_SESSION['klantnr'] = $row["klantnr"];
+		$stmt = $conn->prepare("SELECT klantnr, naam FROM klant WHERE emailadres=? AND password=?");
+		$stmt->bind_param("ss", $email, $password);
+
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+
+		// Controleer of er een overeenkomst is gevonden
+if ($result->num_rows > 0) {
+    // Gebruiker gevonden
+    while($row = $result->fetch_assoc()) {
+        $_SESSION['klantnr'] = $row["klantnr"];
 			$_SESSION['klantnaam'] = $row["naam"];
-			// Sluit de connection
 			mysqli_close($conn);
 
 			header('Location: index.php');
 			exit();
-		}
+    }
+} else {
+    // Gebruiker niet gevonden
+    echo "Geen gebruiker gevonden met dat e-mailadres en wachtwoord.";
+}
 	}
 }
 ?>

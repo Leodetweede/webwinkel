@@ -53,10 +53,10 @@ CREATE TABLE klant (
 );
 
 INSERT INTO `klant` (`naam`, `adres`, `postcode`, `plaats`, `emailadres`, `password`) VALUES
-('Marieke Dillenburg', 'Koningsweg 34', '2351GF', 'Durgerdam', 'm.dillenburg@mail.nl', SHA1('mypass')),
-('Mark Dijkman', 'Koningsweg 34', '2351GF', 'Durgerdam', 'mark.dijkman@mail.nl', SHA1('mypass')),
-('Sjaak van Dam', 'Koningsweg 34', '2351GF', 'Durgerdam', 'svd@mail.nl', SHA1('mypass')),
-('Testgebruiker', 'Koningsweg 34', '2351GF', 'Test', 'test@test.nl', SHA1('test'));
+('Marieke Dillenburg', 'Koningsweg 34', '2351GF', 'Durgerdam', 'm.dillenburg@mail.nl', SHA2('mypass')),
+('Mark Dijkman', 'Koningsweg 34', '2351GF', 'Durgerdam', 'mark.dijkman@mail.nl', SHA2('mypass')),
+('Sjaak van Dam', 'Koningsweg 34', '2351GF', 'Durgerdam', 'svd@mail.nl', SHA2('mypass')),
+('Testgebruiker', 'Koningsweg 34', '2351GF', 'Test', 'test@test.nl', SHA2('test'));
 
 --
 -- Tabelstructuur voor tabel `bestelling`

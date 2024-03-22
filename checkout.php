@@ -46,7 +46,7 @@ if (empty($_SESSION['klantnr'])) {
 		$result = mysqli_query($conn, $sql) or die (mysqli_error($conn)."<br>in file ".__FILE__." on line ".__LINE__);
 	}
 
-	echo "<p>Uw bestelling is afgerond.</p>";
+	echo "<p>Wij hebben uw bestelling ontvangen en zullen een factuur naar het opgegeven e-mailadres mailen.</p>";
 
 	// Sluit de sessie
 	if(isset($_SESSION['cart']))

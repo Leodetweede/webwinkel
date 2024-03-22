@@ -22,7 +22,7 @@ if (mysqli_connect_errno()) {
 }
 
 if (empty($_SESSION['klantnr'])) {
-	echo "<p>U bent niet ingelogd.</p>\n";
+	echo "<li>U bent niet ingelogd | <a href=\"login.php\">login</a></li>\n";
 } else {
 	$klantnr = $_SESSION['klantnr'];
 

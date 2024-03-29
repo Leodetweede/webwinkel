@@ -27,11 +27,11 @@ $sql = "SELECT
 `product_afbeelding`.`image_id`
 FROM `product`, `product_afbeelding`
 WHERE `product`.`productnummer` = `product_afbeelding`.`productnummer`
-AND `product`.`productnaam` = 'HEPA filter';"; 
+AND `product`.`productnaam` = 'Elektrostatische luchtfilter';"; 
 
 // Voer de query uit en sla het resultaat op 
 $result = mysqli_query($conn, $sql);
-	
+
 
 // Laat de producten zien in een form, zodat de gebruiker ze kan selecteren.
 // Haal een nieuwe regel op uit het resultaat, zolang er nog regels beschikbaar zijn.
@@ -58,9 +58,9 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 <html>
 <div class="grid-container">
     <div style="flex: 1;">
-        <h2>Productinformatie</h2>
-        <p>Adem zuiverder met onze HEPA luchtfilter. Ontworpen om de lucht te zuiveren van microscopische deeltjes en allergenen, zorgt onze HEPA filter voor een frisse en gezonde omgeving. Geniet van schone lucht en verminder allergieën met ons betrouwbare luchtfiltratiesysteem.</p>
-       
+    
+        <h2>Product specificaties</h2>
+
         <ul>
             <li><strong>Hoogwaardige Filtratie:</strong> Onze luchtfilters zijn ontworpen om een breed scala aan verontreinigende stoffen, zoals stof, pollen, rook en micro-organismen, uit de lucht te verwijderen, waardoor de luchtkwaliteit binnen je faciliteit aanzienlijk verbetert.</li>
             <li><strong>Optimale Efficiëntie:</strong> Dankzij hun electrostatische technologie bieden onze filters een uitzonderlijke filtratie-efficiëntie, waardoor ze betrouwbaar zijn in het vastleggen van zelfs de kleinste deeltjes en het handhaven van een schone en gezonde luchtomgeving.</li>
@@ -68,24 +68,18 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
             <li><strong>Maatwerk Oplossingen:</strong> We begrijpen dat elk luchtreinigingssysteem uniek is. Daarom bieden wij maatwerkoplossingen die perfect zijn afgestemd op de specificaties en vereisten van jouw installatie, zodat je optimale resultaten kunt behalen.</li>
             <li><strong>Compliance en Veiligheid:</strong> Onze electrostatische luchtfilters voldoen aan alle relevante veiligheids- en regelgevende normen, waardoor je gemoedsrust hebt dat je bedrijf voldoet aan de vereisten op het gebied van luchtkwaliteit en veiligheid.</li>
         </ul>
-
-        <h2>Technische specificaties</h2>
-        <li><strong>Filterefficiëntie:</strong> Onze HEPA-filter voldoet aan strenge normen door deeltjes van 0,3 micron met een efficiëntie van minimaal 99,97% te verwijderen, waardoor uw omgeving wordt beschermd tegen microscopische verontreinigingen.</li>
-
-<li><strong>Luchtstroomcapaciteit:</strong> Ontworpen om een hoge luchtstroomcapaciteit te bieden, variërend van X kubieke meter per uur (m³/h) tot Y kubieke meter per uur (m³/h), afhankelijk van het model, waardoor een krachtige en consistente luchtcirculatie wordt gegarandeerd.</li>
-
-<li><strong>Materiaal van het filtermedium:</strong> Vervaardigd met hoogwaardig glasvezelmedium met een hoge dichtheid, dat zorgt voor optimale filtratieprestaties en langdurige betrouwbaarheid.</li>
-
-<li><strong>Filteroppervlakte:</strong> Onze HEPA-filter biedt een ruim filteroppervlak, wat resulteert in een langere levensduur en verbeterde filtratie-efficiëntie, waardoor uw lucht zuiver blijft.</li>
-
-<li><strong>Drukdaling:</strong> Minimaliseert drukdaling over het filter om de energie-efficiëntie te verbeteren en de werking van HVAC-systemen te optimaliseren, wat resulteert in lagere operationele kosten en een verbeterde luchtkwaliteit.</li>
-
-<li><strong>Kadermateriaal:</strong> Vervaardigd uit sterk en duurzaam kadermateriaal, zoals aluminium of roestvrij staal, voor langdurige prestaties en structurele integriteit, waardoor onze filters bestand zijn tegen de zwaarste omgevingen.</li>
-
-<li><strong>Geschiktheid voor toepassingen:</strong> Onze HEPA-filter is geschikt voor een breed scala aan toepassingen, waaronder HVAC-systemen, cleanrooms, laboratoria, ziekenhuizen en industriële omgevingen, en biedt uitstekende prestaties in diverse omstandigheden.</li>
-
-<li><strong>Certificeringen:</strong> Gecertificeerd volgens internationale normen zoals EN1822 voor HEPA-filters, en voldoet aan de vereisten van relevante regelgevingen en industrienormen, waardoor u gegarandeerd bent van kwaliteit en betrouwbaarheid.</li>
- 
+      
+   <h2>Technische specificaties</h2>
+     <ul>
+        <li><strong>Filterefficiëntie:</strong> Voldoet aan de HEPA-normen door deeltjes van 0,3 micron met een efficiëntie van minimaal 99,97% te verwijderen.</li>
+        <li><strong>Luchtstroomcapaciteit:</strong> Ontworpen om een hoge luchtstroomcapaciteit te bieden, variërend van X kubieke meter per uur (m³/h) tot Y kubieke meter per uur (m³/h), afhankelijk van het model.</li>
+        <li><strong>Materiaal van het filtermedium:</strong> Vervaardigd met hoogwaardig glasvezelmedium met een hoge dichtheid voor optimale filtratieprestaties.</li>
+        <li><strong>Filteroppervlakte:</strong> Biedt een ruim filteroppervlak om een langere levensduur en verbeterde filtratie-efficiëntie te garanderen.</li>
+        <li><strong>Drukdaling:</strong> Minimale drukdaling over het filter om de energie-efficiëntie te verbeteren en de werking van HVAC-systemen te optimaliseren.</li>
+        <li><strong>Kadermateriaal:</strong> Sterk en duurzaam kadermateriaal, zoals aluminium of roestvrij staal, voor langdurige prestaties en structurele integriteit.</li>
+        <li><strong>Geschiktheid voor toepassingen:</strong> Geschikt voor een breed scala aan toepassingen, waaronder HVAC-systemen, cleanrooms, laboratoria, ziekenhuizen en industriële omgevingen.</li>
+        <li><strong>Certificeringen:</strong> Gecertificeerd volgens internationale normen zoals EN1822 voor HEPA-filters, en voldoet aan de vereisten van relevante regelgevingen en industrienormen.</li>
+</ul>
     </div>
     <div style="flex: 1;">
     </div>

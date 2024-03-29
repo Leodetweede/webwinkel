@@ -11,7 +11,6 @@
 	background:#149b2a;
 	border:1px solid #333333;
 	margin:0 auto;
-	width:1855px;
 	height:40px;
 	list-style:none;
 }
@@ -41,21 +40,13 @@ body {
 }
 
 #header h1 {
-	color:#000000;
+	color:#ffffff;
 	font-size:300%;
 	letter-spacing:-3px;
-	text-align:right;
+	text-align:end;
 	padding:0px;
 	margin-bottom:0px;
 }
-
-#header h2 {
-	color:#CCC;
-	font-size:200%;
-	letter-spacing:-2px;
-	text-align:right;
-}
-
 
 
 #navigation li {
@@ -117,8 +108,8 @@ body {
 #product {
 	padding: 5px;
 	margin: 15px;
-	width: 200px;
-	border: 1px solid #ddd;
+	width: 380px;
+	border: 1px solid #2b2a2a;
 	float: left;
 }
 
@@ -282,3 +273,15 @@ form.formulier label {
 	margin-left: 20px;
 }
 
+#plaatje{
+	width: 50%;
+	height: auto;
+}
+
+.grid-container{
+
+}
+
+.paragraph-right{
+	float: right;
+}

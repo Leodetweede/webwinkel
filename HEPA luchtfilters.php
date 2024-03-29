@@ -13,7 +13,6 @@ $active = 3;    // Zorgt ervoor dat header.html weet dat dit het actieve menu-it
 include ('includes/header.html');
 
 echo "<h1>HEPA Luchtfilters</h1>";
-echo "<p>Webpagina voor de HEPA Luchtfilters</p>";
 
 // Include the HTML content from content.php
 include ('Content HEPA luchtfilters.php');

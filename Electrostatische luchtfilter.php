@@ -12,8 +12,10 @@ $page_title = 'Elektrostatische luchtfilter';
 $active = 2;	// Zorgt ervoor dat header.html weet dat dit het actieve menu-item is.
 include ('includes/header.html');
 
-echo "<h1>Verbeter de luchtkwaliteit met onze Elektrostatische Luchtfilters!</h1>";
-echo "<p>Op zoek naar een effectieve manier om de luchtkwaliteit binnen je bedrijf te verbeteren?</p>";
+echo "<h1>Elektrostatische luchtfilter</h1>";
+
+// Include the HTML content from content.php
+include ('Content Elektrostatische luchtfilter.php');
 
 include ('includes/footer.html');
 ?>

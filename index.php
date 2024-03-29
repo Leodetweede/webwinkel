@@ -26,31 +26,24 @@ else echo "</h1>\n";
 ?>
 
 <html>
-<div class="flex">
-	<div class="paragraph-right">
+<div class="grid-layout">
+	<div class="paragraph-item paragraph-item-1">
+		<h2>Wie zijn wij?</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem placeat veniam voluptas ullam veritatis quo cupiditate. Exercitationem veniam ipsum voluptas architecto reiciendis dolores odio inventore? Ratione recusandae expedita fugit quia.</p>
+	</div>
+	<div class="paragraph-item paragraph-item-2">
 		<h2>Waarom GBS Solutions?</h2>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem placeat veniam voluptas ullam veritatis quo cupiditate. Exercitationem veniam ipsum voluptas architecto reiciendis dolores odio inventore? Ratione recusandae expedita fugit quia.</p>
 	</div>
-    <div style="flex: 1;">
-        
-		
-		<ul>
-		<li>Bij GBS Solutions combineren we onze diepgaande expertise op het gebied van luchtreinigingstechnologie met een toewijding aan innovatie en klanttevredenheid. Ons ervaren team van ingenieurs, technici en luchtkwaliteitsspecialisten staat klaar om op maat gemaakte oplossingen te bieden die voldoen aan de unieke behoeften en specificaties van onze klanten.</li>
-</ul>
+	<div class="paragraph-item paragraph-item-3">
 		<h2>Waar staan wij voor?</h2>
-		<ul>
-		<li><strong>Technologische Innovatie:</strong></li>
-		<li>Vooroplopen in luchtreinigingstechnologie met electrostatische filters.</li>
-		<li><strong>Klantgerichtheid:</strong></li>
-		<li>Actief luisteren naar klantbehoeften en oplossingen bieden.</li>
-		<li><strong>Kwaliteit en Betrouwbaarheid:</strong></li>
-		<li>Hoogwaardige producten en betrouwbaarheid gegarandeerd.</li>
-		<li><strong>Partnerschap en Samenwerking:</strong></li>
-		<li>Langdurige relaties gebouwd op vertrouwen en succesvolle samenwerkingen.</li>
-		</ul>
-
-		<p>Bij GBS Solutions zijn we toegewijd aan het leveren van hoogwaardige luchtkwaliteitsoplossingen die een positieve impact hebben op mensen, bedrijven en gemeenschappen over de hele wereld. Neem vandaag nog contact met ons op en ontdek hoe we jou kunnen helpen om een schone en gezonde luchtomgeving te creëren voor jouw bedrijf.</p>
-</html>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem placeat veniam voluptas ullam veritatis quo cupiditate. Exercitationem veniam ipsum voluptas architecto reiciendis dolores odio inventore? Ratione recusandae expedita fugit quia.</p>
+	</div>
+	<div class="paragraph-item paragraph-item-4">
+		<h2>Waarom GBS Solutions?</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem placeat veniam voluptas ullam veritatis quo cupiditate. Exercitationem veniam ipsum voluptas architecto reiciendis dolores odio inventore? Ratione recusandae expedita fugit quia.</p>
+	</div>
+    </html>
 </style>
 </head>
 <body>

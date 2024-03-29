@@ -1,287 +1,328 @@
-
-
 * {
-	border:0;
-	margin:0;
-	padding:0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
+
 /* general */
+
 #navigation {
-	background:#149b2a;
-	border:1px solid #333333;
-	margin:0 auto;
-	height:40px;
-	list-style:none;
+    background: #149b2a;
+    border: 1px solid #333333;
+    margin: 0 auto;
+    height: 40px;
+    list-style: none;
 }
 
 a {
-	color:#777;
-	text-decoration:none;
+    color: #777;
+    text-decoration: none;
 }
 
 a:hover {
-	color:#e73434;
-	text-decoration:none;
+    color: #e73434;
+    text-decoration: none;
 }
+
 
 /* body */
+
 body {
-	background:#ffffffe5;
-	color:#000000;
-	font:0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
+    background: #ffffffe5;
+    color: #000000;
+    font: 0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
 }
 
+
 /* header */
+
 #header {
-	height:0px;
-	margin:0 auto;
-	width: 1080px;
+    height: 0px;
+    margin: 0 auto;
+    width: 1080px;
 }
 
 #header h1 {
-	color:#ffffff;
-	font-size:300%;
-	letter-spacing:-3px;
-	text-align:end;
-	padding:0px;
-	margin-bottom:0px;
+    color: #ffffff;
+    font-size: 300%;
+    letter-spacing: -3px;
+    text-align: end;
+    padding: 0px;
+    margin-bottom: 0px;
 }
 
-
 #navigation li {
-	border-right: 1px solid #1713f500;
-	float:left;
-	width:149px;
-	list-style:none;
+    border-right: 1px solid #1713f500;
+    float: left;
+    width: 149px;
+    list-style: none;
 }
 
 #navigation a {
-	color:#ffffff;
-	display:block;
-	line-height:40px;
-	text-align:center;
+    color: #ffffff;
+    display: block;
+    line-height: 40px;
+    text-align: center;
 }
 
 #navigation a:hover {
     background: #1b161659;
-	color:#ffffff;
+    color: #ffffff;
 }
 
 #navigation .active {
-	background:#1519fc67;
-	color:#ffffff;
+    background: #1519fc67;
+    color: #ffffff;
 }
 
 #menu {
-	float: left;
-	margin-top: -50px;
-	padding: 5px;
+    float: left;
+    margin-top: -50px;
+    padding: 5px;
 }
 
 #menu a {
-	color: #ffffff;
-	text-decoration:underline
+    color: #ffffff;
+    text-decoration: underline
 }
 
 
 /* content */
-#content {
-	margin: 0 auto;
-	padding: 0 0 20px;
-	width: 751px;
-	overflow: auto
-}
 
 #content h1 {
-	border-bottom:1px dashed #ffffff;
-	font-size:1.8em;
-	padding:10px 0 0;
+    border-bottom: 1px dashed #ffffff;
+    font-size: 1.8em;
+    padding: 10px 0 0;
 }
 
 #content p {
-	padding:20px 20px 0;
+    padding: 20px 20px 0;
 }
+
 
 /* ---------------------- producten ----------------------------- */
 
 #product {
-	padding: 5px;
-	margin: 15px;
-	width: 380px;
-	border: 1px solid #2b2a2a;
-	float: left;
+    padding: 5px;
+    margin: 15px;
+    width: 380px;
+    border: 1px solid #2b2a2a;
+    float: left;
 }
 
-#prodnummer, #prodnaam, #beschrijving, #prijs {
-	padding: 5px;
-	margin: 2px 0;
+#prodnummer,
+#prodnaam,
+#beschrijving,
+#prijs {
+    padding: 5px;
+    margin: 2px 0;
 }
 
 #prodnummer {
-	height: 20px;
-	width: 20px;
-	margin: 0 auto;
-	text-align: center;
+    height: 20px;
+    width: 20px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #prodnaam {
-	font-size: 1.3em;
-	width: 150px;
+    font-size: 1.3em;
+    width: 150px;
 }
 
 #prijs {
-	float: right;
-	font-size: 1.4em;
-	padding: 2px;
+    float: right;
+    font-size: 1.4em;
+    padding: 2px;
 }
 
-#voorraad, #leverbaar {
-	float: left;
-	width: 100px;
-	margin: 1px 0;
+#voorraad,
+#leverbaar {
+    float: left;
+    width: 100px;
+    margin: 1px 0;
 }
 
 #beschrijving {
-	padding: 5px;
+    padding: 5px;
 }
 
 #selecteer {
-	padding: 5px;
-	margin-top: 34px;
-	background-color: #000000;
-	overflow: auto;
+    padding: 5px;
+    margin-top: 34px;
+    background-color: #000000;
+    overflow: auto;
 }
+
 
 /* ---------------------- footer ----------------------------- */
+
 #footer {
-	border-top:1px solid #ffffff; 
-	height:50px;
-	margin:0 auto;
-	padding:10px;
-	text-align:center;
-	width:1080px;
+    border-top: 1px solid #ffffff;
+    height: 50px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    width: 1080px;
 }
 
-#links, #rechts {
-	padding: 3px;
+#links,
+#rechts {
+    padding: 3px;
 }
 
 #links {
-	width: 150px;
+    width: 150px;
 }
-	
+
 #rechts {
-	width: 250px;
+    width: 250px;
 }
 
-.error, .ad {
-	font-weight: bold;
-	color: rgb(255, 255, 255);
+.error,
+.ad {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
 
-input, select, .input {
-	padding: 4px;
-	margin: 0 5px;
-	font-weight: bold;
-	font-size: 0.9em;
-	color: #444;
-	border:1px dotted #004080;
+input,
+select,
+.input {
+    padding: 4px;
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #444;
+    border: 1px dotted #004080;
     background: #ffc;
 }
 
 .button {
     border: 1px solid #006;
     background: #AFE7E8;
-	float: right;
+    float: right;
 }
 
-table, td, th {
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	font-size: 1.0em;
+table,
+td,
+th {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.0em;
 }
 
-table 
-{
-	width: 80%;
-	margin: 20px;
-	border-collapse: collapse;
-	text-align: left;
+table {
+    width: 80%;
+    margin: 20px;
+    border-collapse: collapse;
+    text-align: left;
 }
 
 th {
-	background-color: #eee;
-	color:	black;
-	height: 20px;
-	padding: 5px;
+    background-color: #eee;
+    color: black;
+    height: 20px;
+    padding: 5px;
 }
 
 td {
-	height: 25px;
-	vertical-align: bottom;
-	padding: 5px;
+    height: 25px;
+    vertical-align: bottom;
+    padding: 5px;
 }
 
-ul
-{
-	list-style-type: none;
+ul {
+    list-style-type: none;
 }
+
 
 /* -------------------------------- */
 
-.errorlist, .error input{
-	border: 1px solid red;
-	background: #fdd;
+.errorlist,
+.error input {
+    border: 1px solid red;
+    background: #fdd;
 }
+
 .errorlist {
-	width: 70%;
-	margin: 10px;
-	padding: 4px;
+    width: 70%;
+    margin: 10px;
+    padding: 4px;
 }
 
 form.formulier fieldset {
-	margin: 20px;
-	border: 1px solid #aaa;
-	width: 400px;
+    margin: 20px;
+    border: 1px solid #aaa;
+    width: 400px;
 }
+
 form.formulier legend {
-	padding: 0 2px;
-	font-weight: bold;
+    padding: 0 2px;
+    font-weight: bold;
 }
+
 form.formulier label {
-	display: inline-block;
-	line-height: 1.8;
-	vertical-align: top;
+    display: inline-block;
+    line-height: 1.8;
+    vertical-align: top;
 }
+
 form.formulier fieldset ol {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 form.formulier fieldset li {
-	list-style: none;
-	padding: 5px;
-	margin: 0;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
 }
+
 form.formulier em {
-	font-weight: bold;
-	font-style: normal;
-	color: #f00;
+    font-weight: bold;
+    font-style: normal;
+    color: #f00;
 }
+
 form.formulier label {
-	width: 120px; /* Width of labels */
-	margin-left: 20px;
+    width: 120px;
+    /* Width of labels */
+    margin-left: 20px;
 }
 
-#plaatje{
-	width: 50%;
-	height: auto;
+#plaatje {
+    width: 50%;
+    height: auto;
 }
 
-.grid-container{
-
+.grid-layout {
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr
 }
 
-.paragraph-right{
-	float: right;
+.paragraph-item {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.paragraph-item-1 {
+    grid-column: 1 / 1;
+    grid-row: 1;
+}
+
+.paragraph-item-2 {
+    grid-column: 2 / 2;
+    grid-row: 2;
+}
+
+.paragraph-item-3 {
+    grid-column: 1 / 1;
+    grid-row: 3;
+}
+
+.paragraph-item-4 {
+    grid-column: 2 / 2;
+    grid-row: 4;
 }
